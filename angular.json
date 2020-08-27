@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "wdw-books"
+    }
+  },
+  "defaultProject": "wdw-books",
+  "cli": {
+    "analytics": false
+  }
 }
