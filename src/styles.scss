@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+$primary-color: rgb(00, 255, 0);
+
+.my-class  {
+  color: $primary-color;
+}
