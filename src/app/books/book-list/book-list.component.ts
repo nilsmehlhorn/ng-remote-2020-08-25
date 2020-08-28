@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.scss']
+  selector: 'app-book-list',
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.scss'],
 })
-export class BooksComponent implements OnInit {
-
+export class BookListComponent implements OnInit {
   books = [
     {
       title: 'Design Patterns',
@@ -23,9 +22,7 @@ export class BooksComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
