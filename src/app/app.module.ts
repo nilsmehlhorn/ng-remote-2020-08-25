@@ -9,6 +9,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { InfoComponent } from './components/info/info.component';
 import { CursorComponent } from './components/cursor/cursor.component';
 import { TitleBoxComponent } from './components/title-box/title-box.component';
+import { AboutModule } from './about/about.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { TitleBoxComponent } from './components/title-box/title-box.component';
     CursorComponent,
     TitleBoxComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, BooksModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, BooksModule, AboutModule],
   providers: [],
   bootstrap: [AppComponent],
 })
