@@ -1,29 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Book } from '../models/book';
-import { Observable, of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookDataService {
-  private books: Book[] = [
-    {
-      title: 'Design Patterns',
-      subtitle: 'Elements of Reusable Object-Oriented Software',
-    },
-    {
-      title: 'REST und HTTP',
-      subtitle: 'Entwicklung und Integration nach dem Architekturstil des Web',
-    },
-    {
-      title: 'Eloquent JavaScript',
-      subtitle: 'A Modern Introduction to Programming',
-    },
-  ];
-
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {
-    return of(this.books);
+    return this.http.get<Book[]>('http://localhost:4730/books');
   }
 }

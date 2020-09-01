@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,14 +16,10 @@ import { TitleBoxComponent } from './components/title-box/title-box.component';
     NavigationComponent,
     InfoComponent,
     CursorComponent,
-    TitleBoxComponent
+    TitleBoxComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BooksModule
-  ],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, BooksModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
