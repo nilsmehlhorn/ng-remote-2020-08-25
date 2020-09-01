@@ -1,0 +1,48 @@
+ul {
+  margin: 20px;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    max-width: 400px;
+    margin-bottom: 8px;
+    border-radius: 0.2em;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: #eaeaea;
+    }
+
+    p {
+      margin: 10px;
+    }
+
+    .title {
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+
+    .subtitle {
+      color: gray;
+    }
+
+    .author {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

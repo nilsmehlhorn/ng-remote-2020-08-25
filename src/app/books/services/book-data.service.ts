@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Book } from '../models/book';
+import { Observable, of, throwError } from 'rxjs';
 
-@Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.scss']
+@Injectable({
+  providedIn: 'root',
 })
-export class BooksComponent implements OnInit {
-
-  books = [
+export class BookDataService {
+  private books: Book[] = [
     {
       title: 'Design Patterns',
       subtitle: 'Elements of Reusable Object-Oriented Software',
@@ -19,13 +18,12 @@ export class BooksComponent implements OnInit {
     {
       title: 'Eloquent JavaScript',
       subtitle: 'A Modern Introduction to Programming',
-      price: 100
     },
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  getBooks(): Observable<Book[]> {
+    return of(this.books);
   }
-
 }
