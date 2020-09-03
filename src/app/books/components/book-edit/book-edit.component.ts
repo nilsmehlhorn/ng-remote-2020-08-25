@@ -32,4 +32,8 @@ export class BookEditComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
   }
+
+  save(book: Book): void {
+    console.log(book);
+  }
 }

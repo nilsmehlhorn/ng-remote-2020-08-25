@@ -1,9 +1,30 @@
-<form #form="ngForm" *ngIf="book">
+<form #form="ngForm" *ngIf="book" (ngSubmit)="save(form.value)">
   <label for="title">Title</label>
   <input
     type="text"
     [(ngModel)]="book.title"
     id="title"
     name="title"
+    #title="ngModel"
+    required=""
+    minlength="3"
   />
+  <div [hidden]="!title.errors?.required || title.pristine">
+    Title is required
+  </div>
+  <div [hidden]="!title.errors?.minlength || title.pristine">
+    Title needs at least 3 characters
+  </div>
+  <br />
+  <label for="author">Author</label>
+  <input
+    type="text"
+    name="author"
+    #author="ngModel"
+    [(ngModel)]="book.author"
+    required
+  />
+  <div [hidden]="!author.errors?.required">Author is required</div>
+  <br />
+  <button [disabled]="form.invalid" type="submit">Submit</button>
 </form>
