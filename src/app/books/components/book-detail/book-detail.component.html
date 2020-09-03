@@ -1,1 +1,5 @@
-<p>{{ book$ | async | json }}</p>
+<div *ngIf="book$ | async as book">
+  <h1>{{ book.title }}</h1>
+  <p>{{ book.subtitle }}</p>
+  <a [routerLink]="['edit']">Edit</a>
+</div>

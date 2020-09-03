@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { BooksComponent } from './components/books/books.component';
+import { ConfirmDeactivateGuard } from './services/confirm-deactivate.guard';
+import { BookEditComponent } from './components/book-edit/book-edit.component';
 
 const routes: Routes = [
   {
@@ -15,7 +17,12 @@ const routes: Routes = [
       },
       {
         path: ':isbn',
-        component: BookDetailComponent,
+        component: BookDetailComponent
+      },
+      {
+        path: ':isbn/edit',
+        component: BookEditComponent,
+        canDeactivate: [ConfirmDeactivateGuard],
       },
     ],
   },

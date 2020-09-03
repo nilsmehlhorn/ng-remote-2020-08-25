@@ -1,0 +1,9 @@
+<form #form="ngForm" *ngIf="book">
+  <label for="title">Title</label>
+  <input
+    type="text"
+    [(ngModel)]="book.title"
+    id="title"
+    name="title"
+  />
+</form>
