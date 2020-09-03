@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BooksModule } from './books/books.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { InfoComponent } from './components/info/info.component';
 import { CursorComponent } from './components/cursor/cursor.component';
@@ -19,7 +18,7 @@ import { AboutModule } from './about/about.module';
     CursorComponent,
     TitleBoxComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, BooksModule, AboutModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, AboutModule],
   providers: [],
   bootstrap: [AppComponent],
 })
