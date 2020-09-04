@@ -8,6 +8,7 @@ import { BookDetailComponent } from './components/book-detail/book-detail.compon
 import { BooksComponent } from './components/books/books.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import { BookNewComponent } from './components/book-new/book-new.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { BookNewComponent } from './components/book-new/book-new.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    BooksRoutingModule
+    BooksRoutingModule,
+    SharedModule
   ],
   exports: [BookListComponent]
 })

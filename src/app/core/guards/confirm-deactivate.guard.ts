@@ -4,15 +4,18 @@ import {
   CanDeactivate,
   RouterStateSnapshot,
 } from '@angular/router';
-import { BookDetailComponent } from '../components/book-detail/book-detail.component';
+
+interface DeactivateComponent {
+  shouldDeactivate: () => boolean
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConfirmDeactivateGuard
-  implements CanDeactivate<BookDetailComponent> {
+  implements CanDeactivate<DeactivateComponent> {
   canDeactivate(
-    component: BookDetailComponent,
+    component: DeactivateComponent,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot

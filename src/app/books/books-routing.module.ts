@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { BooksComponent } from './components/books/books.component';
-import { ConfirmDeactivateGuard } from './services/confirm-deactivate.guard';
+import { ConfirmDeactivateGuard } from '../core/guards/confirm-deactivate.guard';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import { BookNewComponent } from './components/book-new/book-new.component';
 
