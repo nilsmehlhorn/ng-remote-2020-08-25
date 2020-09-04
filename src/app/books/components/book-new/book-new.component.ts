@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { BookDataService } from '../../services/book-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-new',
@@ -9,7 +11,7 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 export class BookNewComponent implements OnInit {
   form: FormGroup;
 
-  constructor() {}
+  constructor(private bookData: BookDataService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -22,6 +24,8 @@ export class BookNewComponent implements OnInit {
   }
 
   save(): void {
-    console.log(this.form.value)
+    this.bookData.createBook(this.form.value).subscribe(() => {
+      this.router.navigate(['/books']);
+    });
   }
 }

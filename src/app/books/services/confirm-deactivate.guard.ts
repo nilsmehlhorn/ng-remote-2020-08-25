@@ -17,6 +17,6 @@ export class ConfirmDeactivateGuard
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot
   ): boolean {
-    return confirm('Discard?');
+    return confirm('Leave?');
   }
 }

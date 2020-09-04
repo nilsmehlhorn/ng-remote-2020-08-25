@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Book } from '../../models/book';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookDataService } from '../../services/book-data.service';
 import { switchMap, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -17,7 +17,8 @@ export class BookEditComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private bookData: BookDataService
+    private bookData: BookDataService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +35,8 @@ export class BookEditComponent implements OnInit, OnDestroy {
   }
 
   save(book: Book): void {
-    console.log(book);
+    this.bookData.updateBook({...this.book, ...book}).subscribe(() => {
+      this.router.navigate(['/books']);
+    });
   }
 }

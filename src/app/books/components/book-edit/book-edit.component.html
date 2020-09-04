@@ -26,5 +26,13 @@
   />
   <div [hidden]="!author.errors?.required">Author is required</div>
   <br />
+  <label for="subtitle">Subtitle</label>
+  <input
+    type="text"
+    name="subtitle"
+    #author="ngModel"
+    [(ngModel)]="book.subtitle"
+  />
+  <br />
   <button [disabled]="form.invalid" type="submit">Submit</button>
 </form>
