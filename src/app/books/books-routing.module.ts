@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BookListComponent } from './components/book-list/book-list.component';
-import { BookDetailComponent } from './components/book-detail/book-detail.component';
-import { BooksComponent } from './components/books/books.component';
+import { BookListComponent } from './pages/book-list/book-list.component';
+import { BookDetailComponent } from './pages/book-detail/book-detail.component';
+import { BooksComponent } from './pages/books/books.component';
 import { ConfirmDeactivateGuard } from '../core/guards/confirm-deactivate.guard';
-import { BookEditComponent } from './components/book-edit/book-edit.component';
-import { BookNewComponent } from './components/book-new/book-new.component';
+import { BookEditComponent } from './pages/book-edit/book-edit.component';
+import { BookNewComponent } from './pages/book-new/book-new.component';
 
 const routes: Routes = [
   {

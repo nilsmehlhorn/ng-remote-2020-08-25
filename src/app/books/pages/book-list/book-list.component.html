@@ -1,0 +1,6 @@
+<ul *ngIf="books$ | async as books">
+  <li *ngFor="let book of books">
+    <app-book-outlet [book]="book"></app-book-outlet>
+  </li>
+</ul>
+<a [routerLink]="['new']">New</a>
